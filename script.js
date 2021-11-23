@@ -1,14 +1,14 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const img = new Image();
-img.src = './media/flappy-bird-set.png';
+img.src = './media/bape/bape.png';
 
 // general settings
 let gamePlaying = false;
 const gravity = .5;
-const speed = 6.2;
+const speed = 5.2;
 const size = [51, 36];
-const jump = -11.5;
+const jump = -10.5;
 const cTenth = (canvas.width / 10);
 
 let index = 0,
@@ -87,12 +87,13 @@ const render = () => {
     ctx.drawImage(img, 432, Math.floor((index % 9) / 3) * size[1], ...size, ((canvas.width / 2) - size[0] / 2), flyHeight, ...size);
     flyHeight = (canvas.height / 2) - (size[1] / 2);
       // text accueil
-    ctx.fillText(`Meilleur score : ${bestScore}`, 55, 245);
-    ctx.fillText('Cliquez pour jouer', 48, 535);
-    ctx.font = "bold 30px courier";
+    ctx.fillText(`le moins nul:`,50,247) 
+    ctx.fillText(bestScore, 190, 335);
+    ctx.fillText('Cliquez ', 48, 535);
+    ctx.font = "bold 40px courier";
   }
 
-  document.getElementById('bestScore').innerHTML = `Meilleur : ${bestScore}`;
+  document.getElementById('bestScore').innerHTML = `BEST =) : ${bestScore}`;
   document.getElementById('currentScore').innerHTML = `Actuel : ${currentScore}`;
 
   // tell the browser to perform anim
